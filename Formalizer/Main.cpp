@@ -1,8 +1,9 @@
 ﻿#include "pch.h"
 
-int main()
-{
-    std::cout << "Hello CMake." << std::endl;
+#include "models/wordnet/wordnet.h"
 
-    return 0;
+int main() {
+  wordnet wn;
+
+  return 0;
 }
