@@ -5,20 +5,25 @@
 #include "models/wordnet/pointer.h"
 
 // A set of synonymous words.
-struct synset {
-  enum class PosType : char {
+struct synset : public hbann::IStreamable
+{
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(synset, offset, pos, word, pointer, frame, gloss, example);
+  STREAMABLE_DEFINE(synset, offset, pos, word, pointer, frame, gloss, example);
+
+  enum class PosType : char
+  {
     Adjective = 'a',
-    Noun = 'n',
-    Adverb = 'r',
+    Noun      = 'n',
+    Adverb    = 'r',
     Satellite = 's',
-    Verb = 'v',
+    Verb      = 'v',
   };
 
   // synset offset in the raw data file, also used as an identifier.
   int offset;
 
   // part of speech
-  PosType pos;
+  std::string pos;
 
   // words in this synset.
   std::vector<std::string> word;

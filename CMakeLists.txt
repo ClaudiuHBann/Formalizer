@@ -29,9 +29,9 @@ if(MSVC)
         /WX # treat warnings as errors
         /MP # multi-processor compilation
         # /GL # whole program optimization
-        /Zi # debug information format
-        /fsanitize=address # address sanitizer
-        /fsanitize=fuzzer # fuzzer sanitizer
+        # /Zi # debug information format
+        # /fsanitize=address # address sanitizer
+        # /fsanitize=fuzzer # fuzzer sanitizer
         /MTd # static runtime library debug
         /EHsc # exception handling
         /GR # RTTI

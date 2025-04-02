@@ -2,8 +2,12 @@
 
 #include "models/wordnet/synset.h"
 
-// https://github.com/fluhus/wordnet-to-json
-struct wordnet {
+// An entire WordNet database.
+struct wordnet : public hbann::IStreamable
+{
+  NLOHMANN_DEFINE_TYPE_INTRUSIVE(wordnet, synset, lemma, lemmaRanked, exception, example);
+  STREAMABLE_DEFINE(wordnet, synset, lemma, lemmaRanked, exception, example);
+
   // from synset ID to synset object
   std::unordered_map<std::string, synset> synset;
 

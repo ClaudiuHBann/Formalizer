@@ -104,19 +104,19 @@
 
 #if __has_include(<stdfloat>)
 #include <stdfloat>
-#endif // __has_include (<stdfloat>)
+#endif  // __has_include (<stdfloat>)
 
 #if __has_include(<spanstream>)
 #include <spanstream>
-#endif // __has_include (<spanstream>)
+#endif  // __has_include (<spanstream>)
 
 #if __has_include(<stacktrace>)
 #include <stacktrace>
-#endif // __has_include (<stacktrace>)
+#endif  // __has_include (<stacktrace>)
 
 #ifndef __cpp_lib_move_only_function
 #define move_only_function function
-#endif // __cpp_lib_move_only_function
+#endif  // __cpp_lib_move_only_function
 
 using namespace std::chrono_literals;
 using namespace std::string_literals;
