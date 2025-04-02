@@ -17,6 +17,8 @@ set(PATH_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 get_filename_component(PATH_ROOT ${PATH_ROOT} REALPATH)
 
 set(PATH_FORMALIZER ${PATH_ROOT}/Formalizer)
+set(PATH_THIRD_PARTY ${PATH_ROOT}/third-party)
+set(PATH_STREAMABLE ${PATH_THIRD_PARTY}/Streamable)
 
 # Flags
 
@@ -47,6 +49,14 @@ endif()
 
 add_compile_options(${CPPFLAGS})
 
+set(HEADERS_THIRD_PARTY
+    ${PATH_THIRD_PARTY}
+)
+
+set(SOURCES_STREAMABLE
+    ${PATH_STREAMABLE}/Streamable.hpp
+)
+
 set(HEADERS_FORMALIZER
     ${PATH_FORMALIZER}
 )
@@ -56,10 +66,12 @@ file(GLOB_RECURSE SOURCES_FORMALIZER
 )
 
 add_executable(formalizer-app
+    ${SOURCES_STREAMABLE}
     ${SOURCES_FORMALIZER}
 )
 
 target_include_directories(formalizer-app
     PRIVATE
+    ${HEADERS_THIRD_PARTY}
     ${HEADERS_FORMALIZER}
 )

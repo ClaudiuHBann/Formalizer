@@ -1,0 +1,3 @@
+IncludeCategories:
+  - Regex: '^".*pch\.h"'
+    Priority: -2
