@@ -8,6 +8,7 @@ struct wordnet : public hbann::IStreamable
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(wordnet, synset, lemma, lemmaRanked, exception, example);
   STREAMABLE_DEFINE(wordnet, synset, lemma, lemmaRanked, exception, example);
 
+public:
   // from synset ID to synset object
   std::unordered_map<std::string, synset> synset;
 

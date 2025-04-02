@@ -6,6 +6,7 @@ struct pointer : public hbann::IStreamable
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(pointer, symbol, synset, source, target);
   STREAMABLE_DEFINE(pointer, symbol, synset, source, target);
 
+public:
   // relation between the 2 words. Target is <symbol> to source. See their
   // meanings here:
   // https://pkg.go.dev/github.com/fluhus/gostuff/nlp/wordnet#pkg-constants

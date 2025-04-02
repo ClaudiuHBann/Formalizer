@@ -6,6 +6,7 @@ struct example : public hbann::IStreamable
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(example, wordNumber, templateNumber);
   STREAMABLE_DEFINE(example, wordNumber, templateNumber);
 
+public:
   // index of word in the containing synset, -1 for entire synset.
   int wordNumber;
 

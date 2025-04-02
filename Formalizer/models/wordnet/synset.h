@@ -10,6 +10,7 @@ struct synset : public hbann::IStreamable
   NLOHMANN_DEFINE_TYPE_INTRUSIVE(synset, offset, pos, word, pointer, frame, gloss, example);
   STREAMABLE_DEFINE(synset, offset, pos, word, pointer, frame, gloss, example);
 
+public:
   enum class PosType : char
   {
     Adjective = 'a',

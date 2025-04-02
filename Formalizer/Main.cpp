@@ -1,9 +1,18 @@
 ﻿#include "pch.h"
+#include "WordNetHelper.h"
 
-#include "models/wordnet/wordnet.h"
+namespace
+{
+constexpr auto kWordNetFilePathJSON =
+  R"(C:\Users\Claudiu HBann\Desktop\Projects\C++\Formalizer\data\wordnet.json)"sv;
+constexpr auto kWordNetFilePathStreamable =
+  R"(C:\Users\Claudiu HBann\Desktop\Projects\C++\Formalizer\data\wordnet.streamable)"sv;
+}  // namespace
 
-int main() {
-  wordnet wn;
+int main()
+{
+  const auto wordnet = WordNetHelper::Load(kWordNetFilePathStreamable);
+  wordnet;
 
   return 0;
 }
