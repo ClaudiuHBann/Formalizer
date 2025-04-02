@@ -19,6 +19,7 @@ get_filename_component(PATH_ROOT ${PATH_ROOT} REALPATH)
 set(PATH_FORMALIZER ${PATH_ROOT}/Formalizer)
 set(PATH_THIRD_PARTY ${PATH_ROOT}/third-party)
 set(PATH_STREAMABLE ${PATH_THIRD_PARTY}/Streamable)
+set(PATH_JSON ${PATH_THIRD_PARTY}/JSON)
 
 # Flags
 
@@ -57,6 +58,10 @@ set(SOURCES_STREAMABLE
     ${PATH_STREAMABLE}/Streamable.hpp
 )
 
+set(SOURCES_JSON
+    ${PATH_JSON}/json.hpp
+)
+
 set(HEADERS_FORMALIZER
     ${PATH_FORMALIZER}
 )
@@ -66,6 +71,7 @@ file(GLOB_RECURSE SOURCES_FORMALIZER
 )
 
 add_executable(formalizer-app
+    ${SOURCES_JSON}
     ${SOURCES_STREAMABLE}
     ${SOURCES_FORMALIZER}
 )

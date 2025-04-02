@@ -6,6 +6,9 @@
 // Streamable
 #include "Streamable/Streamable.hpp"
 
+// JSPN
+#include "JSON/json.hpp"
+
 // let's shadow the std::move with our own
 #define move(...) move_ex<decltype(__VA_ARGS__)>(__VA_ARGS__)
 
