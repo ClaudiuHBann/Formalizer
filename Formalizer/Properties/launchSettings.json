@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Formalizer": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
