@@ -21,7 +21,7 @@ internal class Encoder : Model
     private LSTM _lstm1;
     private LSTM _lstm2;
 
-    private Tensor _encOutput;
+    private Tensor _encryptedOutput;
     private Tensor _lastHiddenState;
     private Tensor _lastCurrentState;
 
@@ -70,16 +70,16 @@ internal class Encoder : Model
         var inputEmbedded = _embedding.Apply(inputSequence);
 
         var resultLSTM1 = _lstm1.Apply(inputEmbedded, states);
-        _encOutput = resultLSTM1[0];
+        _encryptedOutput = resultLSTM1[0];
         _lastHiddenState = resultLSTM1[1];
         _lastCurrentState = resultLSTM1[2];
 
-        var resultLSTM2 = _lstm2.Apply(_encOutput, [_lastHiddenState, _lastCurrentState]);
-        _encOutput = resultLSTM2[0];
+        var resultLSTM2 = _lstm2.Apply(_encryptedOutput, [_lastHiddenState, _lastCurrentState]);
+        _encryptedOutput = resultLSTM2[0];
         _lastHiddenState = resultLSTM2[1];
         _lastCurrentState = resultLSTM2[2];
 
-        return [_encOutput, _lastHiddenState, _lastCurrentState];
+        return [_encryptedOutput, _lastHiddenState, _lastCurrentState];
     }
 
     /*
